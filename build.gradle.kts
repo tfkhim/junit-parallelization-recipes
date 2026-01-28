@@ -37,10 +37,16 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("tools.jackson.module:jackson-module-kotlin")
 
+    implementation(platform("software.amazon.awssdk:bom:2.41.5"))
+    implementation("software.amazon.awssdk:dynamodb-enhanced")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testImplementation("org.testcontainers:testcontainers-junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    testImplementation(platform("org.testcontainers:testcontainers-bom:2.0.3"))
+    testImplementation("org.testcontainers:localstack:1.21.4")
 }
 
 kotlin {
